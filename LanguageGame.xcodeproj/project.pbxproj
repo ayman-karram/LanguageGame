@@ -19,6 +19,8 @@
 		D305EE6E207A455300FB531F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305EE6D207A455300FB531F /* APIManager.swift */; };
 		D38C6885207A465400E0FF36 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C6883207A465400E0FF36 /* Reachability.swift */; };
 		D38C6886207A465400E0FF36 /* RequestExtensionAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C6884207A465400E0FF36 /* RequestExtensionAlamofire.swift */; };
+		D38C6888207A47BA00E0FF36 /* SentenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C6887207A47BA00E0FF36 /* SentenceModel.swift */; };
+		D38C688A207A489600E0FF36 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C6889207A489600E0FF36 /* StartGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		D305EE6D207A455300FB531F /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		D38C6883207A465400E0FF36 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D38C6884207A465400E0FF36 /* RequestExtensionAlamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestExtensionAlamofire.swift; sourceTree = "<group>"; };
+		D38C6887207A47BA00E0FF36 /* SentenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceModel.swift; sourceTree = "<group>"; };
+		D38C6889207A489600E0FF36 /* StartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,7 @@
 		D305EE69207A442C00FB531F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D38C6887207A47BA00E0FF36 /* SentenceModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 		D305EE6B207A443800FB531F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D38C6889207A489600E0FF36 /* StartGameViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -454,10 +460,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LanguageGame/Pods-LanguageGame-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -506,8 +514,10 @@
 			files = (
 				D38C6886207A465400E0FF36 /* RequestExtensionAlamofire.swift in Sources */,
 				D305EE6E207A455300FB531F /* APIManager.swift in Sources */,
+				D38C6888207A47BA00E0FF36 /* SentenceModel.swift in Sources */,
 				D305EE3C207A417900FB531F /* AppDelegate.swift in Sources */,
 				D38C6885207A465400E0FF36 /* Reachability.swift in Sources */,
+				D38C688A207A489600E0FF36 /* StartGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

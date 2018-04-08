@@ -8,6 +8,7 @@ target 'LanguageGame' do
   # Pods for LanguageGame
 
     pod 'Alamofire'
+    pod 'TransitionButton'
 
   target 'LanguageGameTests' do
     inherit! :search_paths
