@@ -11,12 +11,14 @@
 		314AF044865069E19EF0D357 /* Pods_LanguageGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C2359ECE52B6FE878C45D3 /* Pods_LanguageGameUITests.framework */; };
 		334C33A29E690A7A03E3FCEC /* Pods_LanguageGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C8FA0FE06D7D779F5C099B /* Pods_LanguageGameTests.framework */; };
 		D305EE3C207A417900FB531F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305EE3B207A417900FB531F /* AppDelegate.swift */; };
-		D305EE3E207A417900FB531F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305EE3D207A417900FB531F /* ViewController.swift */; };
 		D305EE41207A417900FB531F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D305EE3F207A417900FB531F /* Main.storyboard */; };
 		D305EE43207A417900FB531F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D305EE42207A417900FB531F /* Assets.xcassets */; };
 		D305EE46207A417900FB531F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D305EE44207A417900FB531F /* LaunchScreen.storyboard */; };
 		D305EE51207A417900FB531F /* LanguageGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305EE50207A417900FB531F /* LanguageGameTests.swift */; };
 		D305EE5C207A417900FB531F /* LanguageGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305EE5B207A417900FB531F /* LanguageGameUITests.swift */; };
+		D305EE6E207A455300FB531F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D305EE6D207A455300FB531F /* APIManager.swift */; };
+		D38C6885207A465400E0FF36 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C6883207A465400E0FF36 /* Reachability.swift */; };
+		D38C6886207A465400E0FF36 /* RequestExtensionAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C6884207A465400E0FF36 /* RequestExtensionAlamofire.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +50,6 @@
 		CF6869B28729D06AE96D582C /* Pods-LanguageGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LanguageGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LanguageGameTests/Pods-LanguageGameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D305EE38207A417900FB531F /* LanguageGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LanguageGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D305EE3B207A417900FB531F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D305EE3D207A417900FB531F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D305EE40207A417900FB531F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D305EE42207A417900FB531F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D305EE45207A417900FB531F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +60,9 @@
 		D305EE57207A417900FB531F /* LanguageGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanguageGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D305EE5B207A417900FB531F /* LanguageGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageGameUITests.swift; sourceTree = "<group>"; };
 		D305EE5D207A417900FB531F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D305EE6D207A455300FB531F /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		D38C6883207A465400E0FF36 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		D38C6884207A465400E0FF36 /* RequestExtensionAlamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestExtensionAlamofire.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,8 +142,11 @@
 			isa = PBXGroup;
 			children = (
 				D305EE3B207A417900FB531F /* AppDelegate.swift */,
-				D305EE3D207A417900FB531F /* ViewController.swift */,
-				D305EE3F207A417900FB531F /* Main.storyboard */,
+				D305EE69207A442C00FB531F /* Models */,
+				D305EE6A207A443300FB531F /* Views */,
+				D305EE6B207A443800FB531F /* Controllers */,
+				D305EE6C207A445200FB531F /* Managers */,
+				D38C6882207A462F00E0FF36 /* Helpers */,
 				D305EE42207A417900FB531F /* Assets.xcassets */,
 				D305EE44207A417900FB531F /* LaunchScreen.storyboard */,
 				D305EE47207A417900FB531F /* Info.plist */,
@@ -163,6 +170,45 @@
 				D305EE5D207A417900FB531F /* Info.plist */,
 			);
 			path = LanguageGameUITests;
+			sourceTree = "<group>";
+		};
+		D305EE69207A442C00FB531F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D305EE6A207A443300FB531F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D305EE3F207A417900FB531F /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D305EE6B207A443800FB531F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D305EE6C207A445200FB531F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D305EE6D207A455300FB531F /* APIManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		D38C6882207A462F00E0FF36 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D38C6883207A465400E0FF36 /* Reachability.swift */,
+				D38C6884207A465400E0FF36 /* RequestExtensionAlamofire.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,9 +452,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LanguageGame/Pods-LanguageGame-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -455,8 +504,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D305EE3E207A417900FB531F /* ViewController.swift in Sources */,
+				D38C6886207A465400E0FF36 /* RequestExtensionAlamofire.swift in Sources */,
+				D305EE6E207A455300FB531F /* APIManager.swift in Sources */,
 				D305EE3C207A417900FB531F /* AppDelegate.swift in Sources */,
+				D38C6885207A465400E0FF36 /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
