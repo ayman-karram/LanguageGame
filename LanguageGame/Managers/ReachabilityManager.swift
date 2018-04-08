@@ -7,3 +7,20 @@
 //
 
 import Foundation
+class ReachabilityManager {
+    
+    static  let sharedInstance = ReachabilityManager()
+    private let reachability = Reachability()
+    
+    private init() {
+        do {
+            try reachability?.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+    }
+    
+    func isRechable () -> Bool {
+        return (self.reachability!.connection != Reachability.Connection.none)
+    }
+}
