@@ -31,25 +31,27 @@ class SentenceDropView: UIView {
         fallDownLabel = FallDownLabel(frame: self.fallDownLabelStartFrame!)
         self.addSubview(fallDownLabel!)
         fallDownLabel?.alpha = 0
-        
         let endYPosition = self.frame.height - self.fallDownLabelHeight
         frame.origin.y = endYPosition
         self.fallDownLabelEndFrame = frame
     }
 
     
-    func startDropLabelWith(text :String, with completion: @escaping () -> ()) {
+    func startDropLabelWith(text :String, withCompletion: @escaping () -> ()) {
+        DispatchQueue.main.async {
         self.fallDownLabel?.text = text
-        UIView.animate(withDuration: 6, animations: {
+        self.fallDownLabel?.alpha = 0.5
+        UIView.animate(withDuration: 5, animations: {
             self.dropLabelDown()
         }, completion: { done in
             UIView.animate(withDuration: 1, animations: {
                 self.fallDownLabel?.alpha = 0
             }, completion: { done in
                 self.resetLabelPosition()
-                completion()
+                withCompletion()
             })
         })
+        }
     }
     
     func dropLabelDown() {
@@ -58,6 +60,10 @@ class SentenceDropView: UIView {
     }
     
     func resetLabelPosition() {
+        DispatchQueue.main.async {
         self.fallDownLabel?.frame = self.fallDownLabelStartFrame!
+        self.fallDownLabel?.alpha = 0
+        self.fallDownLabel?.layer.removeAllAnimations()
+        }
     }
 }
