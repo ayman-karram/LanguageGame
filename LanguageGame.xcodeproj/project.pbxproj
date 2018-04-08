@@ -21,6 +21,9 @@
 		D38C6886207A465400E0FF36 /* RequestExtensionAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C6884207A465400E0FF36 /* RequestExtensionAlamofire.swift */; };
 		D38C6888207A47BA00E0FF36 /* SentenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C6887207A47BA00E0FF36 /* SentenceModel.swift */; };
 		D38C688A207A489600E0FF36 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C6889207A489600E0FF36 /* StartGameViewController.swift */; };
+		D38C688C207A4C4C00E0FF36 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C688B207A4C4C00E0FF36 /* AlertManager.swift */; };
+		D38C688E207A4F2E00E0FF36 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C688D207A4F2E00E0FF36 /* ReachabilityManager.swift */; };
+		D38C6890207A507400E0FF36 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C688F207A507400E0FF36 /* PlayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		D38C6884207A465400E0FF36 /* RequestExtensionAlamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestExtensionAlamofire.swift; sourceTree = "<group>"; };
 		D38C6887207A47BA00E0FF36 /* SentenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceModel.swift; sourceTree = "<group>"; };
 		D38C6889207A489600E0FF36 /* StartGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
+		D38C688B207A4C4C00E0FF36 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		D38C688D207A4F2E00E0FF36 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		D38C688F207A507400E0FF36 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				D38C6889207A489600E0FF36 /* StartGameViewController.swift */,
+				D38C688F207A507400E0FF36 /* PlayViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -204,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				D305EE6D207A455300FB531F /* APIManager.swift */,
+				D38C688B207A4C4C00E0FF36 /* AlertManager.swift */,
+				D38C688D207A4F2E00E0FF36 /* ReachabilityManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -460,11 +469,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LanguageGame/Pods-LanguageGame-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,11 +523,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38C688E207A4F2E00E0FF36 /* ReachabilityManager.swift in Sources */,
+				D38C6890207A507400E0FF36 /* PlayViewController.swift in Sources */,
 				D38C6886207A465400E0FF36 /* RequestExtensionAlamofire.swift in Sources */,
 				D305EE6E207A455300FB531F /* APIManager.swift in Sources */,
 				D38C6888207A47BA00E0FF36 /* SentenceModel.swift in Sources */,
 				D305EE3C207A417900FB531F /* AppDelegate.swift in Sources */,
 				D38C6885207A465400E0FF36 /* Reachability.swift in Sources */,
+				D38C688C207A4C4C00E0FF36 /* AlertManager.swift in Sources */,
 				D38C688A207A489600E0FF36 /* StartGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
