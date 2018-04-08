@@ -75,6 +75,40 @@
             </objects>
             <point key="canvasLocation" x="-100" y="-10"/>
         </scene>
+        <!--Play View Controller-->
+        <scene sceneID="pXA-TV-e5h">
+            <objects>
+                <viewController id="Q4l-qp-Z7I" customClass="PlayViewController" customModule="LanguageGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PZY-eW-rzl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="YqB-wO-sWi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="snb-gz-ozC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="noE-l5-6KJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1706" y="-10"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pxl-PC-7JO">
+            <objects>
+                <navigationController storyboardIdentifier="playNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="gba-qz-vi7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ych-V3-Ewz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q4l-qp-Z7I" kind="relationship" relationship="rootViewController" id="7ph-M7-gbG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ik6-QI-LKy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876.79999999999995" y="-10.794602698650676"/>
+        </scene>
     </scenes>
     <resources>
         <image name="StatrtBG" width="621" height="1104"/>
