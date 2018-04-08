@@ -15,7 +15,8 @@ class StartGameViewController: UIViewController {
     //MARK:- Variables
     @IBOutlet weak var startPlayButtton: TransitionButton!
     let reachability = Reachability()
-    
+    var sentencesList : [SentenceModel]?
+
     //MARK:- View Life cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class StartGameViewController: UIViewController {
     func getSentencesListArray () {
         if (ReachabilityManager.sharedInstance.isRechable()) {
             APIManager.getsentencesList(completionHandler: { response in
+                self.sentencesList = response.result.value
                 self.handelGetSentencesSuccess()
             })
         }
@@ -48,12 +50,17 @@ class StartGameViewController: UIViewController {
     
     //MAR:- Helper Methods
     func handelGetSentencesSuccess () {
-        startPlayButtton.stopAnimation(animationStyle: .expand, completion: {
-            let playNavigationController = self.storyboard?.instantiateViewController(withIdentifier: "playNavigationController") as! UINavigationController
-            playNavigationController.setNavigationBarHidden(true, animated: false)
-            self.present(playNavigationController, animated: true, completion: nil)
-        })
         self.startPlayButtton.stopAnimation()
+        startPlayButtton.stopAnimation(animationStyle: .expand, completion: {
+            
+            guard let sentencesList = self.sentencesList else {
+                return
+            }
+
+            let playViewController = self.storyboard?.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController
+            playViewController.sentencesList = sentencesList
+            self.present(playViewController, animated: true, completion: nil)
+        })
     }
     func handelGetSentencesFail () {
         startPlayButtton.stopAnimation()
