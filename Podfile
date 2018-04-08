@@ -10,6 +10,8 @@ target 'LanguageGame' do
     pod 'Alamofire'
     pod 'TransitionButton'
     pod 'SwiftMessages'
+    pod 'TCProgressBar'
+    pod 'WCLShineButton'
     
   target 'LanguageGameTests' do
     inherit! :search_paths
