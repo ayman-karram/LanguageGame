@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6WJ-gR-Iym">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,20 +9,74 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+        <array key="HiraginoMaruGothProN.ttc">
+            <string>HiraMaruProN-W4</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Start Game View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="gWw-a2-rzJ">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="StartGameViewController" customModule="LanguageGame" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="6WJ-gR-Iym" customClass="StartGameViewController" customModule="LanguageGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vyc-MB-JMb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StatrtBG" translatesAutoresizingMaskIntoConstraints="NO" id="tr7-6W-mXY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spanich" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbS-O4-Lt1">
+                                <rect key="frame" x="72" y="288" width="232" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="1iI-cp-YVj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="60"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeA-A2-egs" customClass="TransitionButton" customModule="TransitionButton">
+                                <rect key="frame" x="87" y="506" width="200" height="50"/>
+                                <color key="backgroundColor" red="0.91344821450000002" green="0.53054463860000001" blue="0.24539121990000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9ut-XF-VO9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonClicked:" destination="6WJ-gR-Iym" eventType="touchUpInside" id="nTb-pC-X7H"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="zNY-3e-lVd" firstAttribute="trailing" secondItem="TeA-A2-egs" secondAttribute="trailing" constant="88" id="6F9-zU-3ZH"/>
+                            <constraint firstItem="tr7-6W-mXY" firstAttribute="bottom" secondItem="zNY-3e-lVd" secondAttribute="bottom" id="H3e-iW-LDn"/>
+                            <constraint firstItem="tr7-6W-mXY" firstAttribute="leading" secondItem="zNY-3e-lVd" secondAttribute="leading" id="OPo-J3-C3Q"/>
+                            <constraint firstItem="tr7-6W-mXY" firstAttribute="top" secondItem="vyc-MB-JMb" secondAttribute="top" id="ZtO-sl-8CN"/>
+                            <constraint firstItem="tr7-6W-mXY" firstAttribute="trailing" secondItem="zNY-3e-lVd" secondAttribute="trailing" id="dpu-OK-yNo"/>
+                            <constraint firstItem="RbS-O4-Lt1" firstAttribute="centerY" secondItem="vyc-MB-JMb" secondAttribute="centerY" id="dx6-Xd-n26"/>
+                            <constraint firstItem="TeA-A2-egs" firstAttribute="leading" secondItem="zNY-3e-lVd" secondAttribute="leading" constant="87" id="mVI-h9-ZJg"/>
+                            <constraint firstItem="RbS-O4-Lt1" firstAttribute="centerX" secondItem="vyc-MB-JMb" secondAttribute="centerX" id="rWn-yt-OFh"/>
+                            <constraint firstItem="zNY-3e-lVd" firstAttribute="bottom" secondItem="TeA-A2-egs" secondAttribute="bottom" constant="111" id="ysg-vf-eQr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zNY-3e-lVd"/>
                     </view>
+                    <connections>
+                        <outlet property="startPlayButtton" destination="TeA-A2-egs" id="DMh-m1-BeA"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mvg-lh-1aY" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-100" y="-10"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="StatrtBG" width="621" height="1104"/>
+    </resources>
 </document>
