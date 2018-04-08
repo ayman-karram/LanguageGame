@@ -102,7 +102,7 @@ class PlayViewController: UIViewController {
                 AlertManager.showFinishGameAlertWith(userScore: self.playManager.userScore, buttonTapHandler: { _ in
                     self.resetGame()
                     SwiftMessages.hide()
-                    
+                    self.startPlay()
                 })
             }
         }
@@ -138,7 +138,6 @@ class PlayViewController: UIViewController {
         self.gameProgressBar.value = 0
         self.sentenceDropView?.resetLabelPosition()
         self.resetUserScoreView()
-        self.startPlay()
     }
     
     //MARK:- Helper
@@ -170,11 +169,6 @@ class PlayViewController: UIViewController {
         self.showAlertAccordingToUserAnswerWith(choiceType: result)
         updateUserScore()
         self.enableChoicesButtons(enable: false)
-
-    }
-    
-    @IBAction func dissmissButtonClicked(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
     }
 }
 
