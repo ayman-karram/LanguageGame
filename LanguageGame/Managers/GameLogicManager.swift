@@ -15,39 +15,57 @@ enum UserChoices : Int {
 }
 
 struct userScores {
+    
     var wrongs   = 0
     var correct  = 0
     var noAnswer = 0
+    
+    mutating func reset() {
+        self.wrongs = 0
+        self.correct = 0
+        self.noAnswer = 0
+    }
 }
 
 class GameLogicManager {
     
     //MARK:- Variables
+    
     // Public
     static let sharedInstance = GameLogicManager()
     
     var sentencesList : [SentenceModel]?
     var currrentFirstLanguageSentences : String?
     var currrentSecondLanguageSentences : String?
-    private(set) public var userScore =  userScores() // read only for instances
     
-    // private
-    private  var totalRoundsCount = 5
-    private  var currentRoundIndex = 0
+    // read only for instances
+    private(set) public var userScore =  userScores()
+    private(set) public var totalRoundsCount = 5
+    private(set) public var currentRoundIndex = 0
 
-    private var firstLanguageSentencesList : [String]?
-    private var secondLanguageSentencesList : [String]?
+    // private
+    private var firstLanguageSentencesList : [String] = []
+    private var secondLanguageSentencesList : [String] = []
     private var currrentFirstLanguageSentencesIndex : Int?
     private var currrentSecondLanguageSentencesIndex : Int?
     
-    private var firstLanguageSelectedIndexs : [Int]?
-    private var secondLanguageSelectedIndexs : [Int]?
-
-
+    private var firstLanguageSelectedIndexs : [Int] = []
+    private var secondLanguageSelectedIndexs : [Int] = []
+    
+    
     //MARK:- Set up
     func setUpGame () {
         spliteSentencesList()
-        setCurrentPlayParameters()
+        setRoundPlayParameters()
+    }
+    
+    func resetGame() {
+        userScore.reset()
+        currentRoundIndex = 0
+        currrentFirstLanguageSentencesIndex = 0
+        currrentSecondLanguageSentencesIndex = 0
+        firstLanguageSelectedIndexs.removeAll()
+        secondLanguageSelectedIndexs.removeAll()
     }
     
     private func spliteSentencesList () {
@@ -55,46 +73,53 @@ class GameLogicManager {
             return
         }
         for sentence in sentencesList {
-            self.firstLanguageSentencesList?.append(sentence.textEng)
-            self.secondLanguageSentencesList?.append(sentence.textSpa)
+            self.firstLanguageSentencesList.append(sentence.textEng)
+            self.secondLanguageSentencesList.append(sentence.textSpa)
         }
     }
     
-    private func setCurrentPlayParameters () {
+    func prepareNextRound () {
+        self.currentRoundIndex += 1
+        self.setRoundPlayParameters()
+    }
+    
+    private func setRoundPlayParameters () {
         let firstLangIndex = self.getRandamIndexFromFirstLanguageList()
         let secondLangIndex = self.getRandamIndexFromSecondLanguageList()
-        self.currrentFirstLanguageSentences = self.firstLanguageSentencesList?[firstLangIndex]
-        self.currrentSecondLanguageSentences = self.firstLanguageSentencesList?[secondLangIndex]
+        self.currrentFirstLanguageSentences = self.firstLanguageSentencesList[firstLangIndex]
+        self.currrentSecondLanguageSentences = self.secondLanguageSentencesList[secondLangIndex]
         self.currrentFirstLanguageSentencesIndex  = firstLangIndex
         self.currrentSecondLanguageSentencesIndex = secondLangIndex
     }
     
     private func getRandamIndexFromFirstLanguageList () -> Int {
         
-        let firstRandamIndex = arc4random_uniform(UInt32(self.totalRoundsCount))
+        var firstRandamIndex = arc4random_uniform(UInt32(self.totalRoundsCount + 1))
         
         // Make sure that this is new random index
-        while (self.firstLanguageSelectedIndexs?.contains(Int(firstRandamIndex)))! {
-            return self.getRandamIndexFromFirstLanguageList()
+        while (self.firstLanguageSelectedIndexs.contains(Int(firstRandamIndex))) {
+            firstRandamIndex = arc4random_uniform(UInt32(self.totalRoundsCount + 1))
         }
-        self.firstLanguageSelectedIndexs?.append(Int(firstRandamIndex))
+
+        self.firstLanguageSelectedIndexs.append(Int(firstRandamIndex))
         return Int(firstRandamIndex)
     }
     
+    
     private func getRandamIndexFromSecondLanguageList () -> Int {
         
-        let secondRandamIndex = arc4random_uniform(UInt32(self.totalRoundsCount))
+        var secondRandamIndex = arc4random_uniform(UInt32(self.totalRoundsCount + 1))
         
-        // Make sure that this is new random index
-        while (self.firstLanguageSelectedIndexs?.contains(Int(secondRandamIndex)))! {
-            return self.getRandamIndexFromSecondLanguageList()
+        while (self.firstLanguageSelectedIndexs.contains(Int(secondRandamIndex))) {
+            secondRandamIndex = arc4random_uniform(UInt32(self.totalRoundsCount + 1))
         }
-        self.secondLanguageSelectedIndexs?.append(Int(secondRandamIndex))
+        
+        self.secondLanguageSelectedIndexs.append(Int(secondRandamIndex))
         return Int(secondRandamIndex)
     }
     
     //MARK:- user score
-    func increamentUserScore (choiceType : UserChoices) {
+    private func increamentUserScore (choiceType : UserChoices) {
         
         switch choiceType {
         case .wrong:
@@ -113,13 +138,12 @@ class GameLogicManager {
     //MARK:- InterActions
     func userDidSelect (choiceType : UserChoices) -> UserChoices {
         let choiceResult = self.setUserScoreAccordingToHis(choiceType: choiceType)
-        self.currentRoundIndex += 1
         return choiceResult
     }
     
     
     //MAR:- Helpers
-    func setUserScoreAccordingToHis(choiceType :UserChoices ) -> UserChoices {
+    private func setUserScoreAccordingToHis(choiceType :UserChoices ) -> UserChoices {
         
         let currentRoundIsCorrect = self.isCurrentSentencetranslationMatches()
         switch choiceType {
@@ -147,7 +171,7 @@ class GameLogicManager {
         }
     }
     
-    func isCurrentSentencetranslationMatches () -> Bool {
+    private func isCurrentSentencetranslationMatches () -> Bool {
         if self.currrentFirstLanguageSentencesIndex == self.currrentSecondLanguageSentencesIndex {
             return true
         }
@@ -157,13 +181,17 @@ class GameLogicManager {
         }
     }
     
-    func userCanPlayNextRound () -> Bool {
-        if self.currentRoundIndex < self.totalRoundsCount {
-            return true
+    func userFinishHisGame () -> Bool {
+        if self.currentRoundIndex < self.totalRoundsCount - 1 {
+            return false
         }
         else
         {
-            return false
+            return true
         }
+    }
+    
+    func getCorrectAnswer () -> String {
+        return self.secondLanguageSentencesList[self.currrentFirstLanguageSentencesIndex!]
     }
 }
