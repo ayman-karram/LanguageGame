@@ -24,6 +24,10 @@
 		D38C688C207A4C4C00E0FF36 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C688B207A4C4C00E0FF36 /* AlertManager.swift */; };
 		D38C688E207A4F2E00E0FF36 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C688D207A4F2E00E0FF36 /* ReachabilityManager.swift */; };
 		D38C6890207A507400E0FF36 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C688F207A507400E0FF36 /* PlayViewController.swift */; };
+		D38C6892207A545200E0FF36 /* GameLogicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C6891207A545200E0FF36 /* GameLogicManager.swift */; };
+		D38C6895207A684000E0FF36 /* SentenceDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C6894207A684000E0FF36 /* SentenceDropView.swift */; };
+		D38C6899207A6A7500E0FF36 /* FallDownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C6898207A6A7500E0FF36 /* FallDownLabel.swift */; };
+		D38C689B207A6B2A00E0FF36 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C689A207A6B2A00E0FF36 /* constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,10 @@
 		D38C688B207A4C4C00E0FF36 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		D38C688D207A4F2E00E0FF36 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		D38C688F207A507400E0FF36 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		D38C6891207A545200E0FF36 /* GameLogicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogicManager.swift; sourceTree = "<group>"; };
+		D38C6894207A684000E0FF36 /* SentenceDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceDropView.swift; sourceTree = "<group>"; };
+		D38C6898207A6A7500E0FF36 /* FallDownLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallDownLabel.swift; sourceTree = "<group>"; };
+		D38C689A207A6B2A00E0FF36 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +201,7 @@
 		D305EE6A207A443300FB531F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D38C6893207A66C800E0FF36 /* CustomViews */,
 				D305EE3F207A417900FB531F /* Main.storyboard */,
 			);
 			path = Views;
@@ -213,6 +222,7 @@
 				D305EE6D207A455300FB531F /* APIManager.swift */,
 				D38C688B207A4C4C00E0FF36 /* AlertManager.swift */,
 				D38C688D207A4F2E00E0FF36 /* ReachabilityManager.swift */,
+				D38C6891207A545200E0FF36 /* GameLogicManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -221,9 +231,19 @@
 			isa = PBXGroup;
 			children = (
 				D38C6883207A465400E0FF36 /* Reachability.swift */,
+				D38C689A207A6B2A00E0FF36 /* constants.swift */,
 				D38C6884207A465400E0FF36 /* RequestExtensionAlamofire.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D38C6893207A66C800E0FF36 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				D38C6894207A684000E0FF36 /* SentenceDropView.swift */,
+				D38C6898207A6A7500E0FF36 /* FallDownLabel.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,13 +490,17 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-LanguageGame/Pods-LanguageGame-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+				"${BUILT_PRODUCTS_DIR}/TCProgressBar/TCProgressBar.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
+				"${BUILT_PRODUCTS_DIR}/WCLShineButton/WCLShineButton.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TCProgressBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCLShineButton.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -523,11 +547,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38C6892207A545200E0FF36 /* GameLogicManager.swift in Sources */,
 				D38C688E207A4F2E00E0FF36 /* ReachabilityManager.swift in Sources */,
 				D38C6890207A507400E0FF36 /* PlayViewController.swift in Sources */,
 				D38C6886207A465400E0FF36 /* RequestExtensionAlamofire.swift in Sources */,
 				D305EE6E207A455300FB531F /* APIManager.swift in Sources */,
+				D38C6899207A6A7500E0FF36 /* FallDownLabel.swift in Sources */,
+				D38C689B207A6B2A00E0FF36 /* constants.swift in Sources */,
 				D38C6888207A47BA00E0FF36 /* SentenceModel.swift in Sources */,
+				D38C6895207A684000E0FF36 /* SentenceDropView.swift in Sources */,
 				D305EE3C207A417900FB531F /* AppDelegate.swift in Sources */,
 				D38C6885207A465400E0FF36 /* Reachability.swift in Sources */,
 				D38C688C207A4C4C00E0FF36 /* AlertManager.swift in Sources */,
