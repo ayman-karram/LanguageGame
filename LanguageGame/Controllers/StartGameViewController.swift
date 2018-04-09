@@ -52,19 +52,22 @@ class StartGameViewController: UIViewController {
     func handelGetSentencesSuccess () {
         self.startPlayButtton.stopAnimation()
         startPlayButtton.stopAnimation(animationStyle: .expand, completion: {
-            
-            guard let sentencesList = self.sentencesList else {
+            guard let _ = self.sentencesList else {
                 return
             }
-
-            let playViewController = self.storyboard?.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController
-            playViewController.sentencesList = sentencesList
-            self.present(playViewController, animated: true, completion: nil)
+            self.presentPlayViewController()
         })
     }
+    
     func handelGetSentencesFail () {
         startPlayButtton.stopAnimation()
         AlertManager.showNoInterNetAlert()
+    }
+    
+    func presentPlayViewController () {
+        let playViewController = self.storyboard?.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController
+        playViewController.sentencesList = sentencesList
+        self.present(playViewController, animated: true, completion: nil)
     }
     
     //MARK:- IBAction Methods
