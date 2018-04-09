@@ -33,6 +33,7 @@ class AlertManager {
         success.button?.isHidden = true
         var successConfig = SwiftMessages.defaultConfig
         successConfig.presentationStyle = .center
+        successConfig.duration = .seconds(seconds: TimeInterval(ALERTMESSAGEDURATION))
         successConfig.presentationContext = .window(windowLevel: UIWindowLevelNormal)
         SwiftMessages.show(config: successConfig, view: success)
     }
@@ -46,6 +47,7 @@ class AlertManager {
         warning.button?.isHidden = true
         var warningConfig = SwiftMessages.defaultConfig
         warningConfig.presentationStyle = .center
+        warningConfig.duration = .seconds(seconds: TimeInterval(ALERTMESSAGEDURATION))
         warningConfig.presentationContext = .window(windowLevel: UIWindowLevelAlert)
         SwiftMessages.show(config: warningConfig, view: warning)
     }

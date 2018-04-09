@@ -90,7 +90,11 @@ class PlayViewController: UIViewController {
     }
     
     func prepareForNextRound () {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        var delay = 0
+        if self.userChoiceAnswer { // Give Time to user to read the alert message after his answer
+            delay = ALERTMESSAGEDURATION + 1
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(delay)) {
             self.correctButton.isSelected = false
             self.wrongButton.isSelected = false
             if self.playManager.userFinishHisGame() == false {
@@ -107,6 +111,7 @@ class PlayViewController: UIViewController {
             }
         }
     }
+    
     func showAlertAccordingToUserAnswerWith (choiceType : UserChoices) {
         switch choiceType {
         case .correct:

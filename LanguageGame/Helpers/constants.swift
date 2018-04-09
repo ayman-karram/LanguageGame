@@ -15,3 +15,6 @@ let MAINORANGECOLOR = UIColor(rgb: (225,147,0))
 
 //MARK:- FONTS
 let MAINFONTNAME = "MarkerFelt-Thin"
+
+//MARK: Alerts
+let ALERTMESSAGEDURATION = 2
