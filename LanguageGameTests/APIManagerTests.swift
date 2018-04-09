@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import Alamofire
+@testable import LanguageGame
 
 class APIManagerTests: XCTestCase {
     
@@ -20,9 +22,11 @@ class APIManagerTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGetSentencesAPI () {
+        APIManager.getsentencesList(completionHandler: { response in
+            let error = response.error
+            XCTAssertNil(error, "Expect that API not respond with error")
+        })
     }
     
     func testPerformanceExample() {

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-
+@testable import LanguageGame
 class GameLogicManagerTests: XCTestCase {
     
     override func setUp() {
@@ -20,9 +20,29 @@ class GameLogicManagerTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testTheInitiationOfSingltonObject () {
+        let gameLogicSingltonManager = GameLogicManager.sharedInstance
+        gameLogicSingltonManager.currrentFirstLanguageSentences = "School"
+        
+        let secondManager = GameLogicManager.sharedInstance
+        XCTAssertEqual(secondManager.currrentFirstLanguageSentences, "School", "Expect that secondManager.currrentFirstLanguageSentences still School")
+    }
+    
+    func testPassingsentencesListToGameLogicManagerObject () {
+        APIManager.getsentencesList(completionHandler: { response in
+            let error = response.error
+            XCTAssertNil(error, "Expect that API not respond with error")
+            GameLogicManager.sharedInstance.sentencesList = response.result.value
+            XCTAssertNotNil(GameLogicManager.sharedInstance.sentencesList, "Expect that GameLogicManager.sharedInstance.sentencesList not nil")
+        })
+    }
+    
+    func testResetGame () {
+        let gameLogicSingltonManager = GameLogicManager.sharedInstance
+        gameLogicSingltonManager.setUpGame()
+        gameLogicSingltonManager.resetGame()
+        let currentRoundIndex = gameLogicSingltonManager.currentRoundIndex
+        XCTAssertTrue(currentRoundIndex == 0, "Expect that currentRoundIndex = 0 after reset")
     }
     
     func testPerformanceExample() {
