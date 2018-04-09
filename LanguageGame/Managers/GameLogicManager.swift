@@ -177,6 +177,9 @@ class GameLogicManager {
     }
     
     func getCorrectAnswer () -> String {
-        return (self.sentencesList?[self.currrentFirstLanguageSentencesIndex!].textSpa)!
+        guard let sentencesList = self.sentencesList else {
+            return ""
+        }
+        return (sentencesList[self.currrentFirstLanguageSentencesIndex!].textSpa)
     }
 }

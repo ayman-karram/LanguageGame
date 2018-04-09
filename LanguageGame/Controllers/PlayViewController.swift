@@ -50,7 +50,7 @@ class PlayViewController: UIViewController {
     //MARK:- SetUp Methods
     func setUpView () {
         var choicesButtonsParams = WCLShineParams()
-        choicesButtonsParams.bigShineColor = UIColor(rgb: (225,147,0))
+        choicesButtonsParams.bigShineColor = MAINORANGECOLOR
         choicesButtonsParams.smallShineColor = UIColor.green
         choicesButtonsParams.shineCount = 15
         choicesButtonsParams.animDuration = 2

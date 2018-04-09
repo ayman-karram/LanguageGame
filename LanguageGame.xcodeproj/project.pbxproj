@@ -28,6 +28,8 @@
 		D38C6895207A684000E0FF36 /* SentenceDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C6894207A684000E0FF36 /* SentenceDropView.swift */; };
 		D38C6899207A6A7500E0FF36 /* FallDownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C6898207A6A7500E0FF36 /* FallDownLabel.swift */; };
 		D38C689B207A6B2A00E0FF36 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C689A207A6B2A00E0FF36 /* constants.swift */; };
+		D38C68A8207B4E4200E0FF36 /* GameLogicManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C689E207B4A0B00E0FF36 /* GameLogicManagerTests.swift */; };
+		D38C68AA207B506700E0FF36 /* APIManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C68A9207B506700E0FF36 /* APIManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		D38C6894207A684000E0FF36 /* SentenceDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceDropView.swift; sourceTree = "<group>"; };
 		D38C6898207A6A7500E0FF36 /* FallDownLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallDownLabel.swift; sourceTree = "<group>"; };
 		D38C689A207A6B2A00E0FF36 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		D38C689E207B4A0B00E0FF36 /* GameLogicManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogicManagerTests.swift; sourceTree = "<group>"; };
+		D38C68A9207B506700E0FF36 /* APIManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				D305EE50207A417900FB531F /* LanguageGameTests.swift */,
+				D38C689E207B4A0B00E0FF36 /* GameLogicManagerTests.swift */,
+				D38C68A9207B506700E0FF36 /* APIManagerTests.swift */,
 				D305EE52207A417900FB531F /* Info.plist */,
 			);
 			path = LanguageGameTests;
@@ -201,8 +207,8 @@
 		D305EE6A207A443300FB531F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D38C6893207A66C800E0FF36 /* CustomViews */,
 				D305EE3F207A417900FB531F /* Main.storyboard */,
+				D38C6893207A66C800E0FF36 /* CustomViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -567,7 +573,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38C68A8207B4E4200E0FF36 /* GameLogicManagerTests.swift in Sources */,
 				D305EE51207A417900FB531F /* LanguageGameTests.swift in Sources */,
+				D38C68AA207B506700E0FF36 /* APIManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
