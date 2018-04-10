@@ -66,6 +66,7 @@ class PlayViewController: UIViewController {
     
     func initVariables() {
         self.playManager.sentencesList = self.sentencesList
+        self.view.layoutSubviews()
         let sentenceDropViewFrame = CGRect(x: 0, y: 0, width: self.sentenceTrackView.frame.size.width, height: self.sentenceTrackView.frame.size.height)
         sentenceDropView = SentenceDropView(frame: sentenceDropViewFrame)
         self.sentenceTrackView.addSubview(sentenceDropView!)
